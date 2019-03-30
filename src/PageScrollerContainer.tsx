@@ -16,7 +16,7 @@ export class PageScrollerContainer extends Component {
     return (
       <ReactPageScroller animationTimer={400} pageOnChange={this.pageOnChange}>
         <Page id="1" />
-        <div>Test</div>
+        <Page id="2" />
       </ReactPageScroller>
     );
   }

@@ -1,7 +1,7 @@
 /* App */
 
 .app {
-  background-color: #282c34;
+  background-color: #16181d; /* #282c34;*/
 }
 
 /* Header */
@@ -9,14 +9,10 @@
 .header {
   background-color: white;
   color: #282c34;
-
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
   z-index: 1;
-
   padding: 10px 20px;
   height: 40px;
   line-height: 40px;
@@ -30,55 +26,45 @@
 
 /* Page */
 
+.page {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
 .pageMetaBar {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50px;
-  padding: 20px;
-  background-color: #16181d;
+  padding: 0 20px;
+  margin-right: auto;
+  margin-left: auto;
   color: white;
 }
 
 .pageMetaInfo {
   padding: 0;
   margin: 0;
-}
-
-.page {
-  border-radius: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-  position: relative;
-  width: 100%;
+  line-height: 60px;
 }
 
 /* Parallax */
 
-.parallaxContainer {
-  width: 100vw;
-  height: 56.25vw; /* 100/56.25 = 1.778 */
-  background: pink;
-  max-height: 100vh;
-  max-width: 177.78vh; /* 4/3 = 1.778 */
-  margin: auto;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0; /* horizontal center */
-  overflow: hidden;
+.parallax {
+  background-image: url("arcticHenge/original.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 60%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .parallaxElement {
   background-repeat: no-repeat;
   background-size: 100%;
-  height: 100%;
-  width: calc(100vw + 60px);
-  height: calc(100vh + 60px);
-  top: -20px !important;
-  left: -20px !important;
 }
 
 .arcticHenge-background {
@@ -95,55 +81,4 @@
 
 .arcticHenge-foreground {
   background-image: url("arcticHenge/foreground.png");
-}
-
-#montserrat-container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  height: 700px;
-  width: 520px;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-#montserrat-background {
-  background-image: url("montserrat/background.png");
-  background-repeat: no-repeat;
-  background-size: 600px;
-  height: 800px;
-  width: 1000px;
-  top: -50px !important;
-  left: -50px !important;
-}
-
-#montserrat-hills {
-  background-image: url("montserrat/hills.png");
-  background-repeat: no-repeat;
-  background-size: 600px;
-  height: 800px;
-  width: 1000px;
-  top: -50px !important;
-  left: -50px !important;
-}
-
-#montserrat-railing {
-  background-image: url("montserrat/railing.png");
-  background-repeat: no-repeat;
-  background-size: 600px;
-  height: 800px;
-  width: 1000px;
-  top: -50px !important;
-  left: -50px !important;
-}
-
-#montserrat-pillars {
-  background-image: url("montserrat/pillars.png");
-  background-repeat: no-repeat;
-  background-size: 600px;
-  height: 800px;
-  width: 1000px;
-  top: -50px !important;
-  left: -50px !important;
 }

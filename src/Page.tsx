@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Parallax from "parallax-js";
+import ContainerDimensions from "react-container-dimensions";
 
-export class Page extends Component<{ id: string }> {
+class PageContent extends Component<{ height: number; width: number }> {
   componentDidMount() {
     this.parallax = new Parallax(this.scene, {});
   }
@@ -15,36 +16,61 @@ export class Page extends Component<{ id: string }> {
   scene: HTMLDivElement | null | undefined;
 
   render() {
+    const metaBarHeight = 60;
+    const containerHeight = this.props.height - metaBarHeight;
+    const containerWidth = this.props.width;
+    let width = containerWidth;
+    let height = (2 / 3) * width;
+    if (height > containerHeight) {
+      height = containerHeight;
+    }
+    if (height < containerHeight) {
+      height = containerHeight;
+      width = containerWidth;
+    }
+
+    return [
+      <div
+        className="parallax"
+        data-limit-y="30"
+        style={{
+          width: width + "px",
+          height: height + "px"
+        }}
+        ref={el => (this.scene = el)}
+      >
+        <div
+          data-depth="0"
+          className="parallaxElement arcticHenge-background"
+        />
+        <div data-depth="0.05" className="parallaxElement arcticHenge-arch2" />
+        <div data-depth="0.1" className="parallaxElement arcticHenge-arch1" />
+        <div
+          data-depth="0.4"
+          className="parallaxElement arcticHenge-foreground"
+        />
+      </div>,
+      <div
+        className="pageMetaBar"
+        style={{
+          width: width + "px"
+        }}
+      >
+        <p className="pageMetaInfo">Artic Henge, Iceland</p>
+      </div>
+    ];
+  }
+}
+
+export class Page extends Component<{ id: string }> {
+  render() {
     return (
       <div className="page">
-        <div className="parallaxContainer">
-          <div
-            className="parallax"
-            data-limit-y="30"
-            ref={el => (this.scene = el)}
-          >
-            <div
-              data-depth="0"
-              className="parallaxElement arcticHenge-background"
-            />
-            <div
-              data-depth="0.05"
-              className="parallaxElement arcticHenge-arch2"
-            />
-            <div
-              data-depth="0.1"
-              className="parallaxElement arcticHenge-arch1"
-            />
-            <div
-              data-depth="0.4"
-              className="parallaxElement arcticHenge-foreground"
-            />
-          </div>
-        </div>
-        {/*<div className="pageMetaBar">
-          <p className="pageMetaInfo">Artic Henge, Iceland</p>
-          <p className="pageMetaInfo">2018</p>
-        </div>*/}
+        <ContainerDimensions>
+          {({ height, width }) => {
+            return <PageContent height={height} width={width} />;
+          }}
+        </ContainerDimensions>
       </div>
     );
   }
