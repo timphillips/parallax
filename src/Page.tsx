@@ -16,8 +16,7 @@ class PageContent extends Component<{ height: number; width: number }> {
   scene: HTMLDivElement | null | undefined;
 
   render() {
-    const metaBarHeight = 60;
-    const containerHeight = this.props.height - metaBarHeight;
+    const containerHeight = this.props.height;
     const containerWidth = this.props.width;
     let width = containerWidth;
     let height = (2 / 3) * width;
@@ -29,36 +28,56 @@ class PageContent extends Component<{ height: number; width: number }> {
       width = containerWidth;
     }
 
-    return [
-      <div
-        className="parallax"
-        data-limit-y="30"
-        style={{
-          width: width + "px",
-          height: height + "px"
-        }}
-        ref={el => (this.scene = el)}
-      >
+    const elementWidth = width + 80;
+    const elementHeight = height + 80 * 0.666;
+    const elementStyle = {
+      width: elementWidth + "px",
+      height: elementHeight + "px"
+    };
+
+    return (
+      <React.Fragment>
         <div
-          data-depth="0"
-          className="parallaxElement arcticHenge-background"
-        />
-        <div data-depth="0.05" className="parallaxElement arcticHenge-arch2" />
-        <div data-depth="0.1" className="parallaxElement arcticHenge-arch1" />
+          className="parallax"
+          data-limit-y="30"
+          style={{
+            width: width + "px",
+            height: height + "px"
+          }}
+          ref={el => (this.scene = el)}
+        >
+          <div
+            data-depth="0"
+            style={elementStyle}
+            className="parallaxElement arcticHenge-background"
+          />
+          <div
+            data-depth="0.05"
+            style={elementStyle}
+            className="parallaxElement arcticHenge-arch2"
+          />
+          <div
+            data-depth="0.1"
+            style={elementStyle}
+            className="parallaxElement arcticHenge-arch1"
+          />
+          <div
+            data-depth="0.4"
+            style={elementStyle}
+            className="parallaxElement arcticHenge-foreground"
+          />
+        </div>
+        ,
         <div
-          data-depth="0.4"
-          className="parallaxElement arcticHenge-foreground"
-        />
-      </div>,
-      <div
-        className="pageMetaBar"
-        style={{
-          width: width + "px"
-        }}
-      >
-        <p className="pageMetaInfo">Artic Henge, Iceland</p>
-      </div>
-    ];
+          className="pageMetaBar"
+          style={{
+            width: width + "px"
+          }}
+        >
+          <p className="pageMetaInfo">Arctic Henge, Iceland</p>
+        </div>
+      </React.Fragment>
+    );
   }
 }
 

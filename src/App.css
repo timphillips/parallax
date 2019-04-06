@@ -32,17 +32,18 @@
   position: relative;
   height: 100vh;
   width: 100vw;
+  max-width: 1500px;
 }
 
 .pageMetaBar {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
   padding: 0 20px;
   margin-right: auto;
   margin-left: auto;
   color: white;
+  background-color: rgb(22, 24, 29, 0.6);
 }
 
 .pageMetaInfo {
@@ -54,31 +55,33 @@
 /* Parallax */
 
 .parallax {
-  background-image: url("arcticHenge/original.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 60%;
   margin-right: auto;
   margin-left: auto;
+  overflow: hidden;
 }
 
 .parallaxElement {
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  background-position: 50% 70%;
+  top: -25px !important;
+  left: -20px !important;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .arcticHenge-background {
-  background-image: url("arcticHenge/background.png");
+  background-image: url("images/arcticHenge/background.png");
 }
 
 .arcticHenge-arch2 {
-  background-image: url("arcticHenge/arch2.png");
+  background-image: url("images/arcticHenge/arch2.png");
 }
 
 .arcticHenge-arch1 {
-  background-image: url("arcticHenge/arch1.png");
+  background-image: url("images/arcticHenge/arch1.png");
 }
 
 .arcticHenge-foreground {
-  background-image: url("arcticHenge/foreground.png");
+  background-image: url("images/arcticHenge/foreground.png");
 }
