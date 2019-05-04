@@ -4,9 +4,9 @@
   background-color: #16181d; /* #282c34;*/
 }
 
-/* Header */
+/* Start Page */
 
-.header {
+.startPage {
   background-color: white;
   color: #282c34;
   position: absolute;
@@ -18,7 +18,7 @@
   line-height: 40px;
 }
 
-.headerTitle {
+.startPageTitle {
   margin-right: 15px;
   font-weight: bold;
   font-size: 18px;
@@ -35,7 +35,7 @@
   max-width: 1500px;
 }
 
-.pageMetaBar {
+.infoBarContainer {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -44,9 +44,10 @@
   margin-left: auto;
   color: white;
   background-color: rgb(22, 24, 29, 0.6);
+  width: 100%;
 }
 
-.pageMetaInfo {
+.infoBarParagraph {
   padding: 0;
   margin: 0;
   line-height: 60px;
@@ -70,18 +71,54 @@
   margin-left: auto;
 }
 
-.arcticHenge-background {
-  background-image: url("images/arcticHenge/background.png");
+.arcticHenge-arch1 {
+  background-image: url("images/arcticHenge/arch1.png");
 }
 
 .arcticHenge-arch2 {
   background-image: url("images/arcticHenge/arch2.png");
 }
 
-.arcticHenge-arch1 {
-  background-image: url("images/arcticHenge/arch1.png");
+.arcticHenge-background {
+  background-image: url("images/arcticHenge/background.png");
 }
 
 .arcticHenge-foreground {
   background-image: url("images/arcticHenge/foreground.png");
+}
+
+.montserrat-background {
+  background-image: url("images/montserrat/background.png");
+}
+
+.montserrat-hills {
+  background-image: url("images/montserrat/hills.png");
+}
+
+.montserrat-pillars {
+  background-image: url("images/montserrat/pillars.png");
+}
+
+.montserrat-railing {
+  background-image: url("images/montserrat/railing.png");
+}
+
+.skye-background {
+  background-image: url("images/skye/background.png");
+}
+
+.skye-beach {
+  background-image: url("images/skye/beach.png");
+}
+
+.skye-foreground {
+  background-image: url("images/skye/foreground.png");
+}
+
+.skye-hill1 {
+  background-image: url("images/skye/hill1.png");
+}
+
+.skye-hill2 {
+  background-image: url("images/skye/hill2.png");
 }
