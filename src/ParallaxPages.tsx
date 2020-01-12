@@ -2,27 +2,32 @@ import React, { Component } from "react";
 import Parallax from "parallax-js";
 import ContainerDimensions from "react-container-dimensions";
 
-export const ParallaxPage = (props: {
-  children: (props: { height: number; width: number }) => React.ReactNode;
-}) => {
+interface ParallaxPageProps {
+  readonly children: (props: {
+    height: number;
+    width: number;
+  }) => React.ReactNode;
+}
+
+function ParallaxPage({ children }: ParallaxPageProps) {
   return (
     <div className="page">
       <ContainerDimensions>
-        {({ height, width }) => props.children({ height, width })}
+        {({ height, width }) => children({ height, width })}
       </ContainerDimensions>
     </div>
   );
-};
+}
 
-export const InfoBar = (props: { text: string }) => {
+function InfoBar({ text }: { text: string }) {
   return (
     <div className="infoBarContainer">
-      <p className="infoBarParagraph">{props.text}</p>
+      <p className="infoBarParagraph">{text}</p>
     </div>
   );
-};
+}
 
-export class ParallaxContainer extends Component<{
+class ParallaxContainer extends Component<{
   height: number;
   width: number;
 }> {
@@ -55,6 +60,13 @@ export class ParallaxContainer extends Component<{
   }
 }
 
+const arcticHengeImages = {
+  background: require("./images/arcticHenge/background.png"),
+  arch1: require("./images/arcticHenge/arch1.png"),
+  arch2: require("./images/arcticHenge/arch2.png"),
+  foreground: require("./images/arcticHenge/foreground.png")
+};
+
 export const ArcticHengePage = () => {
   return (
     <ParallaxPage>
@@ -86,23 +98,35 @@ export const ArcticHengePage = () => {
             <ParallaxContainer height={height} width={width}>
               <div
                 data-depth="0"
-                style={elementStyle}
-                className="parallaxElement arcticHenge-background"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${arcticHengeImages.background}")`
+                }}
+                className="parallaxElement"
               />
               <div
                 data-depth="0.05"
-                style={elementStyle}
-                className="parallaxElement arcticHenge-arch2"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${arcticHengeImages.arch2}")`
+                }}
+                className="parallaxElement"
               />
               <div
                 data-depth="0.1"
-                style={elementStyle}
-                className="parallaxElement arcticHenge-arch1"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${arcticHengeImages.arch1}")`
+                }}
+                className="parallaxElement"
               />
               <div
                 data-depth="0.4"
-                style={elementStyle}
-                className="parallaxElement arcticHenge-foreground"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${arcticHengeImages.foreground}")`
+                }}
+                className="parallaxElement"
               />
             </ParallaxContainer>
             <InfoBar text="Arctic Henge, Iceland" />
@@ -111,6 +135,13 @@ export const ArcticHengePage = () => {
       }}
     </ParallaxPage>
   );
+};
+
+const montserratImages = {
+  background: require("./images/montserrat/background.png"),
+  hills: require("./images/montserrat/hills.png"),
+  railing: require("./images/montserrat/railing.png"),
+  pillars: require("./images/montserrat/pillars.png")
 };
 
 export const MontserratPage = () => {
@@ -138,23 +169,35 @@ export const MontserratPage = () => {
             <ParallaxContainer height={height} width={width}>
               <div
                 data-depth="0"
-                style={elementStyle}
-                className="parallaxElement montserrat-background"
+                className="parallaxElement"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${montserratImages.background}")`
+                }}
               />
               <div
                 data-depth="0.02"
-                style={elementStyle}
-                className="parallaxElement montserrat-hills"
+                className="parallaxElement"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${montserratImages.hills}")`
+                }}
               />
               <div
                 data-depth="0.1"
-                style={elementStyle}
-                className="parallaxElement montserrat-railing"
+                className="parallaxElement"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${montserratImages.railing}")`
+                }}
               />
               <div
                 data-depth="0.4"
-                style={elementStyle}
-                className="parallaxElement montserrat-pillars"
+                className="parallaxElement"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${montserratImages.pillars}")`
+                }}
               />
             </ParallaxContainer>
             <InfoBar text="Montserrat, Spain" />
@@ -163,6 +206,14 @@ export const MontserratPage = () => {
       }}
     </ParallaxPage>
   );
+};
+
+const skyeImages = {
+  background: require("./images/skye/background.png"),
+  hill2: require("./images/skye/hill2.png"),
+  hill1: require("./images/skye/hill1.png"),
+  beach: require("./images/skye/beach.png"),
+  foreground: require("./images/skye/foreground.png")
 };
 
 export const SkyePage = () => {
@@ -196,28 +247,43 @@ export const SkyePage = () => {
             <ParallaxContainer height={height} width={width}>
               <div
                 data-depth="0"
-                style={elementStyle}
-                className="parallaxElement skye-background"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${skyeImages.background}")`
+                }}
+                className="parallaxElement"
               />
               <div
                 data-depth="0.02"
-                style={elementStyle}
-                className="parallaxElement skye-hill2"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${skyeImages.hill2}")`
+                }}
+                className="parallaxElement"
               />
               <div
                 data-depth="0.04"
-                style={elementStyle}
-                className="parallaxElement skye-hill1"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${skyeImages.hill1}")`
+                }}
+                className="parallaxElement"
               />
               <div
                 data-depth="0.08"
-                style={elementStyle}
-                className="parallaxElement skye-beach"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${skyeImages.beach}")`
+                }}
+                className="parallaxElement"
               />
               <div
                 data-depth="0.15"
-                style={elementStyle}
-                className="parallaxElement skye-foreground"
+                style={{
+                  ...elementStyle,
+                  backgroundImage: `url("${skyeImages.foreground}")`
+                }}
+                className="parallaxElement"
               />
             </ParallaxContainer>
             <InfoBar text="Skye, Scotland" />

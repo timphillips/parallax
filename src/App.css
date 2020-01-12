@@ -7,21 +7,75 @@
 /* Start Page */
 
 .startPage {
-  background-color: white;
-  color: #282c34;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  padding: 10px 20px;
-  height: 40px;
-  line-height: 40px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  max-width: 1000px;
 }
 
 .startPageTitle {
-  margin-right: 15px;
+  padding-top: 40px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 90px;
+}
+
+.startPageSubtitle {
+  font-size: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.startPageSceneContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  padding: 0;
+  margin-top: 30px;
+  position: relative;
+}
+
+.startPageScene {
+  background-color: #b3b3b3;
+  display: grid;
+  height: 280px;
+  background-size: 100%;
+  position: relative;
+  border-radius: 15px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.startPageScene:hover {
+  opacity: 1;
+}
+
+.startPageSceneLabel {
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-left: 10px;
+  background-color: rgb(22, 24, 29, 0.6);
+}
+
+.startPageFooter {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #8c8c8c;
+}
+
+.startPageFooterLink:visited,
+.startPageFooterLink:link {
+  color: #8c8c8c;
+}
+.startPageFooterLink:hover {
+  color: #bfbfbf;
+}
+.startPageFooterLink:active {
+  color: #98b6e6;
 }
 
 /* Page */
@@ -69,56 +123,4 @@
   left: -20px !important;
   margin-right: auto;
   margin-left: auto;
-}
-
-.arcticHenge-arch1 {
-  background-image: url("images/arcticHenge/arch1.png");
-}
-
-.arcticHenge-arch2 {
-  background-image: url("images/arcticHenge/arch2.png");
-}
-
-.arcticHenge-background {
-  background-image: url("images/arcticHenge/background.png");
-}
-
-.arcticHenge-foreground {
-  background-image: url("images/arcticHenge/foreground.png");
-}
-
-.montserrat-background {
-  background-image: url("images/montserrat/background.png");
-}
-
-.montserrat-hills {
-  background-image: url("images/montserrat/hills.png");
-}
-
-.montserrat-pillars {
-  background-image: url("images/montserrat/pillars.png");
-}
-
-.montserrat-railing {
-  background-image: url("images/montserrat/railing.png");
-}
-
-.skye-background {
-  background-image: url("images/skye/background.png");
-}
-
-.skye-beach {
-  background-image: url("images/skye/beach.png");
-}
-
-.skye-foreground {
-  background-image: url("images/skye/foreground.png");
-}
-
-.skye-hill1 {
-  background-image: url("images/skye/hill1.png");
-}
-
-.skye-hill2 {
-  background-image: url("images/skye/hill2.png");
 }
