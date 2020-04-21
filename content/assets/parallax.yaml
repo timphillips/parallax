@@ -1,0 +1,9 @@
+- id: skye
+  name: Skye, Scotland
+  thumbnail: images/skye/thumbnail.png
+- id: montserrat
+  name: Montserrat, Spain
+  thumbnail: images/montserrat/thumbnail.png
+- id: arcticHenge
+  name: Arctic Henge, Iceland
+  thumbnail: images/arcticHenge/thumbnail.png
