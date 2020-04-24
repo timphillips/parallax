@@ -18,10 +18,10 @@ const StyledBackIcon = styled(FaRegArrowAltCircleLeft)`
   width: 40px;
   top: 20px;
   left: 20px;
-  transition: opacity 0.3s;
-  opacity: 0.8;
   cursor: pointer;
   color: white;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 
   &:hover {
     opacity: 1;
@@ -36,7 +36,7 @@ const ParallaxLayout = ({ children, name, ratio }) => {
       <Link to="/">
         <StyledBackIcon />
       </Link>
-      <ParallaxFooter name={name} />
+      <ParallaxFooter>{name}</ParallaxFooter>
     </StyledLayout>
   );
 };

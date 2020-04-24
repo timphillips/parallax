@@ -1,9 +1,51 @@
 - id: skye
   name: Skye, Scotland
   thumbnail: images/skye/thumbnail.png
+  layers:
+    - id: background
+      image: images/skye/background.png
+      depth: 0
+    - id: hill2
+      image: images/skye/hill2.png
+      depth: 0.02
+    - id: hill1
+      image: images/skye/hill1.png
+      depth: 0.04
+    - id: beach
+      image: images/skye/beach.png
+      depth: 0.08
+    - id: foreground
+      image: images/skye/foreground.png
+      depth: 0.15
 - id: montserrat
   name: Montserrat, Spain
   thumbnail: images/montserrat/thumbnail.png
+  layers:
+    - id: background
+      image: images/montserrat/background.png
+      depth: 0
+    - id: hills
+      image: images/montserrat/hills.png
+      depth: 0.06
+    - id: railing
+      image: images/montserrat/railing.png
+      depth: 0.15
+    - id: pillars
+      image: images/montserrat/pillars.png
+      depth: 0.3
 - id: arcticHenge
   name: Arctic Henge, Iceland
   thumbnail: images/arcticHenge/thumbnail.png
+  layers:
+    - id: background
+      image: images/arcticHenge/background.png
+      depth: 0
+    - id: arch2
+      image: images/arcticHenge/arch2.png
+      depth: 0.05
+    - id: arch1
+      image: images/arcticHenge/arch1.png
+      depth: 0.1
+    - id: foreground
+      image: images/arcticHenge/foreground.png
+      depth: 0.4

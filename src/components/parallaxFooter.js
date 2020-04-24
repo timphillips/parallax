@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const StyledFooter = styled.footer`
+const ParallaxFooter = styled.footer`
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   left 0;
@@ -10,7 +9,5 @@ const StyledFooter = styled.footer`
   padding: 10px 20px;
   font-size: smaller;
 `;
-
-const ParallaxFooter = ({ name }) => <StyledFooter>{name}</StyledFooter>;
 
 export default ParallaxFooter;

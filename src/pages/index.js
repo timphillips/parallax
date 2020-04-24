@@ -60,12 +60,11 @@ export const pageQuery = graphql`
         description
       }
     }
-    thumbnails: allFile(filter: { name: { eq: "thumbnail" } }) {
-      edges {
-        node {
-          id
-          name
-          relativePath
+    parallax: allParallaxYaml {
+      nodes {
+        id
+        name
+        thumbnail {
           childImageSharp {
             fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
@@ -74,22 +73,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    parallax: allParallaxYaml {
-      nodes {
-        id
-        name
-        thumbnail
-      }
-    }
   }
 `;
 
 const IndexPage = ({ data }) => {
-  const thumbnailImagesByPath = {};
-  for (const { node } of data.thumbnails.edges) {
-    thumbnailImagesByPath[node.relativePath] = node;
-  }
-
   return (
     <Frame>
       <SEO title="Home" />
@@ -101,9 +88,7 @@ const IndexPage = ({ data }) => {
         {data.parallax.nodes.map(node => (
           <ThumbnailLink key={node.id} to={`/${node.id}`}>
             <ThumbnailImage
-              fluid={
-                thumbnailImagesByPath[node.thumbnail].childImageSharp.fluid
-              }
+              fluid={node.thumbnail.childImageSharp.fluid}
             ></ThumbnailImage>
             <ThumbnailCaption>{node.name}</ThumbnailCaption>
           </ThumbnailLink>
