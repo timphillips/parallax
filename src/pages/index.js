@@ -1,3 +1,5 @@
+import "../components/parallaxLayout.css";
+
 import { Link, graphql } from "gatsby";
 
 import Footer from "../components/footer";
