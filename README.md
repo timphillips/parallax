@@ -7,9 +7,9 @@ The parallax effect is implemented with [parallax.js](https://github.com/wagerfi
 ## Development
 
 - Run `yarn` to bootstrap the project.
-- Run `gatsby develop` to start a hot-reloading development environment accessible by default at http://localhost:8000.
+- Run `yarn develop` to start a hot-reloading development environment accessible by default at http://localhost:8000.
 
 ## Deployment
 
-- Run `gatsby build`.
+- Run `yean build`.
 - Copy the `public` folder to the web server.

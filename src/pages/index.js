@@ -1,4 +1,4 @@
-import "../components/parallaxLayout.css";
+import "../components/layout.css";
 
 import { Link, graphql } from "gatsby";
 

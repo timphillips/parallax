@@ -1,4 +1,4 @@
-import "./parallaxLayout.css";
+import "./layout.css";
 
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { Link } from "gatsby";
