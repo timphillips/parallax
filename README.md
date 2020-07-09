@@ -11,5 +11,5 @@ The parallax effect is implemented with [parallax.js](https://github.com/wagerfi
 
 ## Deployment
 
-- Run `yean build`.
+- Run `yarn build`.
 - Copy the `public` folder to the web server.
